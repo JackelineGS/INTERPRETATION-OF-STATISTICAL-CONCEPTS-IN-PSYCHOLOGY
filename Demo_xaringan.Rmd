@@ -130,6 +130,8 @@ class: inverse, center, middle
 
 * Así mismo se halló que dichos errores se presentaron en docentes, profesionales e investigadores.
 
+[Badenes-Ribera, Frías-Navarro, Pascual-Soler, & Monterde-i-Bort, 2016](http://www.psicothema.com/psicothema.asp?id=4349)
+
 ]]]
 
   
@@ -203,7 +205,7 @@ class: inverse, center, middle
 * (2) Utilizar R para el empleo de la estadística inferencial en el análisis de datos en Psicología.
 * (3) Reconocer el uso de los estadísticos inferenciales en correspondencia al tipo de variables con los que se está trabajando.
 
-#### Psychometrics Group Instrument
+#### [Psychometrics Group Instrument](https://osf.io/hbme7/)
 
 * Conformada por 29 ítems (14 inversos) distribuido en nueve tópicos
 
