@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Interpretación de conceptos estadísticos en Psicología: nivel de conocimientos y efectos de un diseño instruccional en estudiantes universitarios peruanos</title>
+    <title>Interpretación de conceptos estadísticos en Psicología</title>
     <meta charset="utf-8" />
     <meta name="author" content="Arnold Tafur, Brian Peña, Connie Aliaga, Francisca Ramirez, Jackeline García y Oscar" />
     <script src="libs/header-attrs/header-attrs.js"></script>
@@ -10,7 +10,7 @@
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
     <link href="libs/panelset/panelset.css" rel="stylesheet" />
     <script src="libs/panelset/panelset.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"de28bbfe94b746a1bca866735e97d4c5","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xe117942c51b41b3a30f599e468fcda5","expires":1}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
@@ -28,10 +28,10 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Interpretación de conceptos estadísticos en Psicología: nivel de conocimientos y efectos de un diseño instruccional en estudiantes universitarios peruanos
+# Interpretación de conceptos estadísticos en Psicología
 ### Arnold Tafur, Brian Peña, Connie Aliaga, Francisca Ramirez, Jackeline García y Oscar
 ### Avances en Medición Psicológica
-### 17/12/2021
+### 18/12/2021
 
 ---
 
@@ -82,15 +82,16 @@ top:1em;right:1em;
 
 
 ---
-## Contenido
+### Contenido
 
 .font105[.line-space1-5[
 
 #####1. INTRODUCCIÓN
+* Problemática
 * Antecedentes
-* Justificación
-* Diseño instruccional de Merril
-* Objetivo
+* Diseño instruccional
+* Conceptos
+* Objetivos
 
 #####2. MÉTODO
 * Participantes
@@ -108,28 +109,6 @@ top:1em;right:1em;
 
 ]]
 
-
----
-
-class: inverse, center, middle
-# .font100[INTRODUCCIÓN]
-
----
-# .font100[Definicion]
-
-
-.pull-left[
-Los gráficos de barras permiten resumir un conjunto de datos según una **categoría** por ejemplo según fechas, sexo, países, regiones, entre otros. 
-
-La figura muestra las proporciones medias de `variantes de COVID-19` en los distintos países entre enero de 2020 y abril de 2021. 
-
-La imagen puede apreciarse de forma más detallada en el siguiente link (https://ars.els-cdn.com/content/image/1-s2.0-S0033350621003073-gr1.jpg)
-]
-
-.pull-right[
-El gráfico fue extraido de la investigación **The real life impact of vaccination on COVID-19 mortality in Europe and Israel** (https://doi.org/10.1016/j.puhe.2021.07.037). 
-]
-
 ---
 
 class: inverse, center, middle
@@ -137,36 +116,72 @@ class: inverse, center, middle
 ---
 
 .panelset[
-.panel[.panel-name[Antecedentes]
+.panel[.panel-name[Problematica]
 
-#### 1. Antecedentes
+### Situación problema
 
 .font105[.line-space1-5[
-Al usar la función `%&gt;%` lo primero que colocaremos antes de crear cualquier código es la base de datos que en este caso se llama `data`. Posteriormente incluiremos la función **ggplot()** la cual crea el sistema de coordenadas y especifica las coordenadas con `aes`. Para la gráfica en el eje "x" utilizaremos la variable categórica `ase_cat`
+
+* El conocimiento de conceptos estadísticos permite una adecuada interpretación y discusión de los resultados.
+
+* Cometer errores en la interpretación de conceptos estadísticos conlleva a producir resultados no confiables y, por consiguiente, obtener conclusiones distorsionadas 
+
+* Las dificultades para interpretar adecuadamente se han atribuído a diferentes factores: currículo, materiales instruccionales, enseñanaza, etc. 
+
 ]]]
 
 
-.panel[.panel-name[Justificación]
+.panelset[
+.panel[.panel-name[Antecedentes]
 
-#### 2. Geometrías
+### Estudios previos
 
 .font105[.line-space1-5[
-Luego de especificar las coordenadas del gráfico definimos la geométria a utilizar, para ello agregaremos una capa **(con el símbolo +) ** y utilizaremos la geometría **geom_bar**
-]
-]
-]
+* Los estudiantes de Psicología cometen errores en la interpretación de conceptos estadísticos, entre ellos: la prueba de hipótesis, el valor p, el tamaño del efecto, correlación, potencia estadísticam, etc.
 
+* Errores en profesionales 
+* En Perú..
+
+]]]
+
+  
 .panel[.panel-name[Diseño instruccional]
 
-#### 3. Diseño Instruccional de Merril
+.font105[.line-space1-5[
+
+&lt;img src="imagenes/Merrill3.png" width="100%" /&gt;
+
+]
+]
+]
+
+.panel[.panel-name[Conceptos]
+
+### Conceptos estadísticos básicos
 
 .font105[.line-space1-5[
-Si bien `aes` permite definir las coordenadas del gráfico, también permite incluir funciones para personalizar el gráfico. Incluyendo el argumento `colour` podemos colorear los bordes de la barra e incluyendo el argumento `fill` podemos especificar un color para el relleno del gráfico.
+
+* Test de Significancia de la Hipótesis Nula (NHST)
+* Valor p
+* Tamaño del efecto
+* Intervalos de confianza
+* Poder estadístico
+* Modelo Lineal General (MLG)
+* Fiabilidad
+* Error Tipo I, Error Tipo II
+* Análisis paso a paso
 
 ]
 ]
 ]
-.panel[.panel-name[Objetivo]
+
+.panel[.panel-name[Objetivos]
+
+### Objetivos de la investigación
+
+* Utilizar el **Psychometrics Group Instrument** para comparar las puntuaciones obtenidas por un grupo de estudiantes de Psicología asistentes a un programa de enseñanza basado en el diseño instruccional de Merrill con respecto a lo hallado en los estudios de Mittag y Thompson (2000), Gordon (2001) y Monterde-i-Bort et al. (2010).
+
+* Analizar los **efectos** producidos por el programa de enseñanza para la mejora de la interpretación de conceptos estadísticos.
 
 ] 
 ]
@@ -174,9 +189,165 @@ Si bien `aes` permite definir las coordenadas del gráfico, también permite inc
 
 ---
 class: inverse, center, middle
-# .font100[GRÁFICO DE BARRAS CON geom_col()]
+# .font100[MÉTODO]
 
 ---
+
+.panelset[
+.panel[.panel-name[Participantes]
+
+### Primer Objetivo
+
+.font105[.line-space1-5[
+* Estudiantes que completaron unicamente la evaluación del **pretest**
+* Muestra: 16 estudiantes, con edades entre 18 y 28 años (M = 22.50, DE = 3.12), 10 fueron mujeres y cursaban del primer al sexto año de estudios
+
+]]
+
+### Segundo Objetivo
+
+.font105[.line-space1-5[
+* Estudiantes que contestaron el **pretest y el postest**
+* Muestra: nueve estudiantes con edades entre 18 y 24 años (M = 20.90, DE = 2.26), seis fueron mujeres y respecto al año de estudios, dos estudiantes fueron de primer año, dos de segundo, cuatro de tercero, y uno de cuarto.
+
+]]
+]
+
+
+.panelset[
+.panel[.panel-name[Instrumentos]
+
+
+.pull-left[
+
+#### Programa de enseñanza 
+* Programa de enseñanza de 7 sesiones
+* (1) Conocer los conceptos de Estadística inferencial más empleados en el análisis de datos en Psicología.
+* (2) Utilizar R para el empleo de la estadística inferencial en el análisis de datos en Psicología.
+* (3) Reconocer el uso de los estadísticos inferenciales en correspondencia al tipo de variables con los que se está trabajando.
+
+]
+
+.pull-left[
+#### [Psychometrics Group Instrument] (https://osf.io/hbme7/)
+* Conformada por 29 ítemsdistribuido en nueve tópicos
+
+1. Generales
+2. Sobre MLG
+3. Sobre procedimientos de análisis paso a paso
+4. Sobre fiabilidad de puntuaciones
+5. Sobre errores tipo I y tipo II
+6. Sobre la influencia del tamaño de muestra
+7. Sobre el valor p como medida del tamaño del efecto
+8. Valor p como la medida de importancia del resultado
+9. Valor p como evidencia de replicabilidad
+
+]
+]
+  
+.panel[.panel-name[Diseño]
+
+.font105[.line-space1-5[
+Los diseños instruccionales brindan principios basados en la teoría de la instrucción y el aprendizaje para su consolidación. 
+
+&lt;img src="imagenes/Merrill.png" width="100%" /&gt;
+
+
+]
+]
+]
+
+.panel[.panel-name[Procedimiento]
+
+### Conceptos estadísticos básicos
+
+.font105[.line-space1-5[
+
+* Test de Significancia de la Hipótesis Nula (NHST)
+* Valor p
+* Tamaño del efecto
+* Intervalos de confianza
+* Poder estadístico
+* Modelo Lineal General (MLG)
+* Fiabilidad
+* Error Tipo I, Error Tipo II
+* Análisis paso a paso
+
+]
+]
+]
+
+.panel[.panel-name[Análisis de datos]
+
+### Objetivos de la investigación
+
+* Utilizar el **Psychometrics Group Instrument** para comparar las puntuaciones obtenidas por un grupo de estudiantes de Psicología asistentes a un programa de enseñanza basado en el diseño instruccional de Merrill con respecto a lo hallado en los estudios de Mittag y Thompson (2000), Gordon (2001) y Monterde-i-Bort et al. (2010).
+
+* Analizar los **efectos** producidos por el programa de enseñanza para la mejora de la interpretación de conceptos estadísticos.
+
+] 
+]
+]
+
+---
+
+class: inverse, center, middle
+# .font100[RESULTADOS]
+
+---
+
+.panelset[
+.panel[.panel-name[Primer resultado]
+
+### Comparación del pre-test y post-test
+
+.font105[.line-space1-5[
+
+* El conocimiento de conceptos estadísticos permite una adecuada interpretación y discusión de los resultados.
+
+* Cometer errores en la interpretación de conceptos estadísticos conlleva a producir resultados no confiables y, por consiguiente, obtener conclusiones distorsionadas 
+
+* Las dificultades para interpretar adecuadamente se han atribuído a diferentes factores: currículo, materiales instruccionesles, enseñanaza, etc. 
+
+]]]
+
+
+.panelset[
+.panel[.panel-name[Comparación con otras investigaciones]
+
+### Estudios previos
+
+.font105[.line-space1-5[
+* Los estudiantes de Psicología cometen errores en la interpretación de conceptos estadísticos, entre ellos: la prueba de hipótesis, el valor p, el tamaño del efecto, correlación, potencia estadísticam, etc.
+
+* Errores en profesionales 
+* En Perú..
+
+]]]
+
+  
+.panel[.panel-name[Diseño]
+
+.font105[.line-space1-5[
+Los diseños instruccionales brindan principios basados en la teoría de la instrucción y el aprendizaje para su consolidación. 
+
+&lt;img src="imagenes/Merrill.png" width="100%" /&gt;
+
+
+]
+]
+]
+
+
+---
+
+
+
+
+
+
+
+
 
 
 class: middle
