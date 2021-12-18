@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Interpretación de conceptos estadísticos en Psicología: nivel de conocimientos y efectos de un diseño instruccional en estudiantes universitarios peruanos</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Arnold Tafur, Brian Peña, Connie Aliaga, Francisca Ramirez, Jackeline García y Oscar" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"de28bbfe94b746a1bca866735e97d4c5","expires":1}</script>
+    <script src="libs/himalaya/himalaya.js"></script>
+    <script src="libs/js-cookie/js.cookie.js"></script>
+    <link href="libs/editable/editable.css" rel="stylesheet" />
+    <script src="libs/editable/editable.js"></script>
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copiar","success":"Copiado","error":"Presiona Ctrl+C para copiar"})</script>
+    <script src="libs/xaringanExtra_fit-screen/fit-screen.js"></script>
+    <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="custom.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Interpretación de conceptos estadísticos en Psicología: nivel de conocimientos y efectos de un diseño instruccional en estudiantes universitarios peruanos
+### Arnold Tafur, Brian Peña, Connie Aliaga, Francisca Ramirez, Jackeline García y Oscar
+### Avances en Medición Psicológica
+### 17/12/2021
+
+---
+
+
+class: inverse, center, middle
+# .font150[TEMARIO]
+
+
+
+
+
+
+<div>
+<style type="text/css">.xaringan-extra-logo {
+width: 100px;
+height: 100px;
+z-index: 0;
+background-image: url(Imagenes/logo.png);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top:1em;right:1em;
+}
+</style>
+<script>(function () {
+  let tries = 0
+  function addLogo () {
+    if (typeof slideshow === 'undefined') {
+      tries += 1
+      if (tries < 10) {
+        setTimeout(addLogo, 100)
+      }
+    } else {
+      document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
+        .forEach(function (slide) {
+          const logo = document.createElement('a')
+          logo.classList = 'xaringan-extra-logo'
+          logo.href = 'https://www.linktr.ee/innov_lab'
+          slide.appendChild(logo)
+        })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addLogo)
+})()</script>
+</div>
+
+
+
+
+---
+## Contenido
+
+.font105[.line-space1-5[
+
+#####1. INTRODUCCIÓN
+* Antecedentes
+* Justificación
+* Diseño instruccional de Merril
+* Objetivo
+
+#####2. MÉTODO
+* Participantes
+* Instrumentos
+* Diseño
+* Procedimiento
+* Análisis de datos
+
+#####3. RESULTADOS
+
+* Comparación de pretest y posttest
+* Comparar con otras investigaciones
+
+#####4. DISCUSIÓN
+
+]]
+
+
+---
+
+class: inverse, center, middle
+# .font100[INTRODUCCIÓN]
+
+---
+# .font100[Definicion]
+
+
+.pull-left[
+Los gráficos de barras permiten resumir un conjunto de datos según una **categoría** por ejemplo según fechas, sexo, países, regiones, entre otros. 
+
+La figura muestra las proporciones medias de `variantes de COVID-19` en los distintos países entre enero de 2020 y abril de 2021. 
+
+La imagen puede apreciarse de forma más detallada en el siguiente link (https://ars.els-cdn.com/content/image/1-s2.0-S0033350621003073-gr1.jpg)
+]
+
+.pull-right[
+El gráfico fue extraido de la investigación **The real life impact of vaccination on COVID-19 mortality in Europe and Israel** (https://doi.org/10.1016/j.puhe.2021.07.037). 
+]
+
+---
+
+class: inverse, center, middle
+# .font100[INTRODUCCIÓN]
+---
+
+.panelset[
+.panel[.panel-name[Antecedentes]
+
+#### 1. Antecedentes
+
+.font105[.line-space1-5[
+Al usar la función `%&gt;%` lo primero que colocaremos antes de crear cualquier código es la base de datos que en este caso se llama `data`. Posteriormente incluiremos la función **ggplot()** la cual crea el sistema de coordenadas y especifica las coordenadas con `aes`. Para la gráfica en el eje "x" utilizaremos la variable categórica `ase_cat`
+]]]
+
+
+.panel[.panel-name[Justificación]
+
+#### 2. Geometrías
+
+.font105[.line-space1-5[
+Luego de especificar las coordenadas del gráfico definimos la geométria a utilizar, para ello agregaremos una capa **(con el símbolo +) ** y utilizaremos la geometría **geom_bar**
+]
+]
+]
+
+.panel[.panel-name[Diseño instruccional]
+
+#### 3. Diseño Instruccional de Merril
+
+.font105[.line-space1-5[
+Si bien `aes` permite definir las coordenadas del gráfico, también permite incluir funciones para personalizar el gráfico. Incluyendo el argumento `colour` podemos colorear los bordes de la barra e incluyendo el argumento `fill` podemos especificar un color para el relleno del gráfico.
+
+]
+]
+]
+.panel[.panel-name[Objetivo]
+
+] 
+]
+]
+
+---
+class: inverse, center, middle
+# .font100[GRÁFICO DE BARRAS CON geom_col()]
+
+---
+
+
+class: middle
+
+&lt;br&gt;
+&lt;center&gt;
+&lt;h1&gt;
+&lt;span style="color:black"&gt;¡Gracias por su atención!&lt;/span&gt;
+&lt;h1&gt;
+&lt;/center&gt;
+&lt;br&gt;
+
+.line-space1-5[
+Estas diapositivas fueron creadas mediante el paquete [xaringan](https://github.com/yihui/xaringan) y [xaringanthemer](https://github.com/gadenbuie/xaringanthemer/). Adicionalmente, la presentación de [Brian Peña](https://github.com/brianmsm), sobre [Rmarkdown Nivel Básico](https://github.com/brianmsm/rmakdown-basico), fue tomada como guía-base para esta elaboración.
+]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:11"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

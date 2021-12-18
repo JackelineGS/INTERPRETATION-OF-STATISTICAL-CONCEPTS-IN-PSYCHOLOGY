@@ -1,0 +1,184 @@
+---
+title: "Interpretación de conceptos estadísticos en Psicología: nivel de conocimientos y efectos de un diseño instruccional en estudiantes universitarios peruanos"
+author: "Arnold Tafur, Brian Peña, Connie Aliaga, Francisca Ramirez, Jackeline García y Oscar"
+institute: "Avances en Medición Psicológica"
+date: "17/12/2021"
+output: 
+  xaringan::moon_reader:
+    css: [xaringan-themer.css, custom.css]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: 16:11
+encoding: "UTF-8"
+---
+
+class: inverse, center, middle
+# .font150[TEMARIO]
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(tidyverse)
+library(here)
+library(psych)
+library(extrafont)
+
+```
+
+```{r xaringan-themer, warning=FALSE, include=FALSE}
+library(xaringanthemer)
+style_mono_accent(
+  base_color       = "#F26952",
+  padding          = "16px 50px 12px 50px",
+  code_font_google = google_font("Fira Mono")
+)
+```
+
+```{r xaringanExtra, echo=FALSE}
+#devtools::install_github("gadenbuie/xaringanExtra")
+library(xaringanExtra)
+
+xaringanExtra::use_xaringan_extra(c("tile_view", "tachyons", "panelset"))
+xaringanExtra::use_editable(expires = 1)
+xaringanExtra::use_logo(
+  image_url = "Imagenes/logo.png",
+  link_url = "https://www.linktr.ee/innov_lab",
+  width = 100,
+  height = 100
+)
+
+xaringanExtra::use_clipboard(
+  button_text = "Copiar",
+  success_text = "Copiado",
+  error_text = "Presiona Ctrl+C para copiar"
+)
+
+xaringanExtra::use_fit_screen()
+
+xaringanExtra::use_extra_styles(
+  hover_code_line = TRUE,          #<<
+  mute_unhighlighted_code = FALSE  #<<
+)
+```
+
+```{r, include=FALSE}
+data <- read_csv("data_base_program.csv")
+```
+```{r, include=FALSE}
+base <- read_csv("base_comparison.csv")
+```
+
+---
+## Contenido
+
+.font105[.line-space1-5[
+
+#####1. INTRODUCCIÓN
+* Antecedentes
+* Justificación
+* Diseño instruccional de Merril
+* Objetivo
+
+#####2. MÉTODO
+* Participantes
+* Instrumentos
+* Diseño
+* Procedimiento
+* Análisis de datos
+
+#####3. RESULTADOS
+
+* Comparación de pretest y posttest
+* Comparar con otras investigaciones
+
+#####4. DISCUSIÓN
+
+]]
+
+
+---
+
+class: inverse, center, middle
+# .font100[INTRODUCCIÓN]
+
+---
+# .font100[Definicion]
+
+
+.pull-left[
+Los gráficos de barras permiten resumir un conjunto de datos según una **categoría** por ejemplo según fechas, sexo, países, regiones, entre otros. 
+
+La figura muestra las proporciones medias de `variantes de COVID-19` en los distintos países entre enero de 2020 y abril de 2021. 
+
+La imagen puede apreciarse de forma más detallada en el siguiente link (https://ars.els-cdn.com/content/image/1-s2.0-S0033350621003073-gr1.jpg)
+]
+
+.pull-right[
+El gráfico fue extraido de la investigación **The real life impact of vaccination on COVID-19 mortality in Europe and Israel** (https://doi.org/10.1016/j.puhe.2021.07.037). 
+]
+
+---
+
+class: inverse, center, middle
+# .font100[INTRODUCCIÓN]
+---
+
+.panelset[
+.panel[.panel-name[Antecedentes]
+
+#### 1. Antecedentes
+
+.font105[.line-space1-5[
+Al usar la función `%>%` lo primero que colocaremos antes de crear cualquier código es la base de datos que en este caso se llama `data`. Posteriormente incluiremos la función **ggplot()** la cual crea el sistema de coordenadas y especifica las coordenadas con `aes`. Para la gráfica en el eje "x" utilizaremos la variable categórica `ase_cat`
+]]]
+
+
+.panel[.panel-name[Justificación]
+
+#### 2. Geometrías
+
+.font105[.line-space1-5[
+Luego de especificar las coordenadas del gráfico definimos la geométria a utilizar, para ello agregaremos una capa **(con el símbolo +) ** y utilizaremos la geometría **geom_bar**
+]
+]
+]
+
+.panel[.panel-name[Diseño instruccional]
+
+#### 3. Diseño Instruccional de Merril
+
+.font105[.line-space1-5[
+Si bien `aes` permite definir las coordenadas del gráfico, también permite incluir funciones para personalizar el gráfico. Incluyendo el argumento `colour` podemos colorear los bordes de la barra e incluyendo el argumento `fill` podemos especificar un color para el relleno del gráfico.
+
+]
+]
+]
+.panel[.panel-name[Objetivo]
+
+] 
+]
+]
+
+---
+class: inverse, center, middle
+# .font100[GRÁFICO DE BARRAS CON geom_col()]
+
+---
+
+
+class: middle
+
+<br>
+<center>
+<h1>
+<span style="color:black">¡Gracias por su atención!</span>
+<h1>
+</center>
+<br>
+
+.line-space1-5[
+Estas diapositivas fueron creadas mediante el paquete [xaringan](https://github.com/yihui/xaringan) y [xaringanthemer](https://github.com/gadenbuie/xaringanthemer/). Adicionalmente, la presentación de [Brian Peña](https://github.com/brianmsm), sobre [Rmarkdown Nivel Básico](https://github.com/brianmsm/rmakdown-basico), fue tomada como guía-base para esta elaboración.
+]
