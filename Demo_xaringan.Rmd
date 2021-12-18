@@ -265,6 +265,15 @@ class: inverse, center, middle
 # .font100[RESULTADOS]
 
 ---
+# .font100[RESULTADOS]
+
+.font105[.line-space1-5[
+
+* El manuscrito de la investigación en español, los materiales de las siete sesiones, las bases de datos y el código para el análisis de datos lo puede encontrar en la plataforma [OSF](https://osf.io/pxbcs/) del grupo Avances en Medición Psicológica.
+
+]]
+
+---
 
 
 class: middle
