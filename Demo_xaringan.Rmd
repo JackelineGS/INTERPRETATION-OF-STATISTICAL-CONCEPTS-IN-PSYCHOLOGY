@@ -72,7 +72,7 @@ base <- read_csv("base_comparison.csv")
 ```
 
 ---
-## Contenido
+### Contenido
 
 .font105[.line-space1-5[
 
@@ -125,6 +125,19 @@ El gráfico fue extraido de la investigación **The real life impact of vaccinat
 class: inverse, center, middle
 # .font100[INTRODUCCIÓN]
 ---
+
+.panelset[
+.panel[.panel-name[Problematica]
+
+#### 1. Situación problema
+
+.font105[.line-space1-5[
+
+* cometer errores en la interpretación de conceptos estadísticos conlleva a producir resultados no confiables y, por consiguiente, obtener conclusiones distorsionadas   
+]]]
+
+
+
 
 .panelset[
 .panel[.panel-name[Antecedentes]
