@@ -1,0 +1,345 @@
+---
+title: "Data analysis: Interpretation of statistical concepts in Psychology"
+author:
+  - name: Arnold Alejandro Tafur-Mendoza
+    email: aa.tafurm@up.edu.pe
+    affiliation: Grupo de Estudios Avances en Medición Psicológica, Universidad Nacional Mayor de San Marcos
+  - name: Brian Norman Peña-Calero
+    email: brianmsm@gmail.com
+    affiliation: Grupo de Estudios Avances en Medición Psicológica, Universidad Nacional Mayor de San Marcos
+  - name: Connie Daniela Aliaga Guanilo
+    email: connie.aliaga@unmsm.edu.pe
+    affiliation: Grupo de Estudios Avances en Medición Psicológica, Universidad Nacional Mayor de San Marcos
+  - name: Christian Alexis Moreau Almaraz
+    email: christian.moreau@unmsm.edu.pe
+    affiliation: Grupo de Estudios Avances en Medición Psicológica, Universidad Nacional Mayor de San Marcos
+  - name: Francesca Cecilia Ramírez-Bontá
+    email: francesca.ramirez.psico@gmail.com
+    affiliation: Grupo de Estudios Avances en Medición Psicológica, Universidad Nacional Mayor de San Marcos
+  - name: Jackeline Edith Garcia-Serna
+    email: jackeline.garcia1@unmsm.edu.pe
+    affiliation: Grupo de Estudios Avances en Medición Psicológica, Universidad Nacional Mayor de San Marcos
+  - name: Oscar Esteban Meza Chahuara
+    email: oscar.meza1@unmsm.edu.pe
+    affiliation: Grupo de Estudios Avances en Medición Psicológica, Universidad Nacional Mayor de San Marcos
+date: "13/2/2021"
+output: 
+  html_document: 
+    toc_float: yes
+    toc: yes
+    highlight: kate
+    number_sections: yes
+    code_folding: show
+    code_download: yes
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(here)
+library(psych)
+library(extrafont)
+```
+
+# Data import
+
+The database `data_base_program.csv` containing the information of the study participants is imported.
+
+```{r message=FALSE, warning=FALSE}
+base <- read_csv(here("data_base_program.csv"))
+```
+
+# Data format
+
+Only cases that have undergone both pretest and posttest measures at the same time are filtered out. Also, the scores of the reversed items are inverted.
+
+```{r}
+base <- base %>% 
+  filter(pretest == "yes",
+         posttest == "yes") %>%
+  mutate(
+    across(
+      c(pre_6, pre_8, pre_11, pre_13, pre_14, pre_17, pre_18,
+        pre_20, pre_21, pre_22, pre_26, pre_27, pre_28, pre_29,
+        post_6, post_8, post_11, post_13, post_14, post_17, post_18,
+        post_20, post_21, post_22, post_26, post_27, post_28, post_29),
+      ~ 6 - .x
+    )
+  ) %>% 
+  select(-c(1:6)) %>% 
+  select(pre_1, pre_2, pre_4, pre_5, pre_6, pre_8, pre_9,
+         pre_11, pre_14, pre_17, pre_18, pre_22, post_1, post_2, post_4,
+         post_5, post_6, post_8, post_9, post_11, post_14, post_14, post_17,
+         post_18, post_22)
+
+rmarkdown::paged_table(base)
+```
+
+# Descriptive statistics and hypothesis testing
+
+The next code block generates the descriptive and group comparison measures using the Wilcoxon signed-rank test (W).
+
+```{r message=FALSE, warning=FALSE}
+describe(data.frame(base$post_1, base$pre_1), na.rm = F)[, c(2, 3, 4)]
+describe(data.frame(base$post_2, base$pre_2), na.rm = F)[, c(2, 3, 4)]
+describe(data.frame(base$post_4, base$pre_4), na.rm = F)[, c(2, 3, 4)]
+describe(data.frame(base$post_5, base$pre_5), na.rm = F)[, c(2, 3, 4)]
+describe(data.frame(base$post_6, base$pre_6), na.rm = F)[, c(2, 3, 4)]
+describe(data.frame(base$post_8, base$pre_8), na.rm = F)[, c(2, 3, 4)]
+describe(data.frame(base$post_9, base$pre_9), na.rm = F)[, c(2, 3, 4)]
+describe(data.frame(base$post_11, base$pre_11), na.rm = F)[, c(2, 3, 4)]
+describe(data.frame(base$post_14, base$pre_14), na.rm = F)[, c(2, 3, 4)]
+describe(data.frame(base$post_17, base$pre_17), na.rm = F)[, c(2, 3, 4)]
+describe(data.frame(base$post_18, base$pre_18), na.rm = F)[, c(2, 3, 4)]
+describe(data.frame(base$post_22, base$pre_22), na.rm = F)[, c(2, 3, 4)]
+```
+
+```{r message=FALSE, warning=FALSE}
+wilcox.test(base$post_1, base$pre_1, paired = T)
+wilcox.test(base$post_2, base$pre_2, paired = T)
+wilcox.test(base$post_4, base$pre_4, paired = T)
+wilcox.test(base$post_5, base$pre_5, paired = T)
+wilcox.test(base$post_6, base$pre_6, paired = T)
+wilcox.test(base$post_8, base$pre_8, paired = T)
+wilcox.test(base$post_9, base$pre_9, paired = T)
+wilcox.test(base$post_11, base$pre_11, paired = T)
+wilcox.test(base$post_14, base$pre_14, paired = T)
+wilcox.test(base$post_17, base$pre_17, paired = T)
+wilcox.test(base$post_18, base$pre_18, paired = T)
+wilcox.test(base$post_22, base$pre_22, paired = T)
+```
+
+# Matched-pairs rank-biserial correlation
+
+A function is created to calculate the matched-pairs rank-biserial correlation, which is the appropriate effect size measure for the analysis used.
+
+```{r}
+rc <- function(pretest, posttest){
+  dif <- c(pretest - posttest)
+  dif <- dif[which((dif != "NA") == TRUE)]
+  dif <- dif[dif != 0]
+  rangodif <- rank(abs(dif[dif != 0]))
+  SumPos <- sum(rangodif[sign(dif) == 1])
+  SumNeg <- sum(rangodif[sign(dif) == -1])
+  t <- min(c( SumPos, SumNeg))
+  n <- as.numeric(length(which((pretest != "NA" & posttest != "NA") == TRUE)))
+  rc <- round(4*abs(t-(SumPos+SumNeg)/2)/(n*(n+1)),3)
+  
+  label <- paste(substitute(posttest)[3], "-", substitute(pretest)[3])
+  tibble(Variables = label,
+         'Matched-pairs rank-biserial correlation' = rc)
+}
+```
+
+```{r}
+bind_rows(
+  rc(base$pre_1, base$post_1),
+  rc(base$pre_2, base$post_2),
+  rc(base$pre_4, base$post_4),
+  rc(base$pre_5, base$post_5),
+  rc(base$pre_6, base$post_6),
+  rc(base$pre_8, base$post_8),
+  rc(base$pre_9, base$post_9),
+  rc(base$pre_11, base$post_11),
+  rc(base$pre_14, base$post_14),
+  rc(base$pre_17, base$post_17),
+  rc(base$pre_18, base$post_18),
+  rc(base$pre_22, base$post_22)
+)
+```
+
+# Plot
+
+## Preliminary format
+
+A database containing the item score data from previous research is imported (Gordon, 2001; Mittag & Tompson, 2000; Monterde-i-Bort et al., 2010). This will be formatted in order to produce the comparative plot.
+
+```{r}
+comparison <- read_csv("base_comparison.csv")
+names_items <- c("I. General perceptions",
+                 "01. NHST controversy",
+                 "02. Significance",
+                 "03. Statistical power",
+                 "04. p-value ban",
+                 "05. Statistical significance",
+                 "II. General Linear Model (GLM)",
+                 "12. Correlation",
+                 "26. Regression (*)",
+                 "III. Stepwise analysis",
+                 "13. Correct use (*)",
+                 "20. Order of variables (*)",
+                 "IV. Score reliability",
+                 "07. Test reliability",
+                 "19. NHST and reliability",
+                 "23. Low reliability",
+                 "28. Importance (*)",
+                 "V. Type I and II errors",
+                 "09. Type II error",
+                 "17. Type I error (*)",
+                 "22. Type I and II errors (*)",
+                 "29. Frequency (*)",
+                 "VI. Sample size influences",
+                 "10. Small sample size",
+                 "16. Reject Ho",
+                 "25. Large sample size",
+                 "VII. p-value (effect size)",
+                 "11. Effect size (*)",
+                 "14. No reject Ho (*)",
+                 "24. Sample size dependent",
+                 "VIII. p-value (importance)",
+                 "06. p-value < .05 (*)",
+                 "18. No significance (*)",
+                 "27. Improbable results (*)",
+                 "IX. p-value (replicability)",
+                 "08. Small p-value (*)",
+                 "15. Sample data",
+                 "21. Population data (*)")
+names_items <- rev(names_items)
+
+comparison <- comparison %>% 
+  pivot_longer(
+    cols = c(`Mittag & Tompson (2000)`, `Gordon (2001)`, 
+             `Monterde-i-Bort et al. (2010)`, `Present study`),
+    names_to = "study",
+    values_to = "media"
+  ) %>% 
+  mutate(Item = as_factor(Item),
+         Topic = as_factor(Topic),
+         study = as_factor(study))
+```
+
+## Plot generation
+
+### Figure 2
+
+This second plot allows us to compare the scores of the students in this study and that of previous research (Gordon, 2001; Mittag & Tompson, 2000; Monterde-i-Bort et al., 2010).
+
+```{r message=FALSE, warning=FALSE}
+font_import()
+loadfonts(device = "win")
+
+plot_comparison <- ggplot(comparison, aes(Item, media)) +
+  geom_point(aes(group = study, col = study, shape = study), size = 8, stroke = 2) +
+  scale_shape_manual(values=c(9, 11, 8, 10)) +
+  scale_color_manual(values = c("gray75", "gray55", "gray35", "grey15")) +
+  theme(legend.position = "top",
+        legend.title = element_blank(),
+        legend.text = element_text(size = 16,
+                                   color = "black",
+                                   family = "Times New Roman"),
+        plot.margin = margin(.2, .2, .2, .2, "cm"),
+        axis.text.x = element_text(size = 21,
+                                   colour = "black",
+                                   family = "Times New Roman"),
+        axis.text.y = element_text(face = c('plain', 'plain', 'plain', 'bold', 'plain',
+                                            'plain', 'plain', 'bold', 'plain', 'plain',
+                                            'plain', 'bold', 'plain', 'plain', 'plain',
+                                            'bold', 'plain', 'plain', 'plain', 'plain',
+                                            'bold', 'plain', 'plain', 'plain', 'plain',
+                                            'bold', 'plain', 'plain', 'bold', 'plain',
+                                            'plain', 'bold', 'plain', 'plain', 'plain',
+                                            'plain', 'plain', 'bold'), size = 20,
+                                   colour = "black",
+                                   family = "Times New Roman"),
+        axis.title.x = element_text(size = 20,
+                                    colour = "black",
+                                    family = "Times New Roman",
+                                    face = "bold",
+                                    margin = margin(t = 20)),
+        panel.grid.minor = ggplot2::element_blank(),
+        panel.grid.major.y = ggplot2::element_line(color = "#cbcbcb"),
+        panel.grid.major.x = ggplot2::element_blank(),
+        panel.background = element_blank(),
+        axis.ticks = ggplot2::element_blank(),
+        axis.line = ggplot2::element_blank()) +
+  labs(x = NULL) +
+  scale_y_continuous(limits = c(1,5)) +
+  coord_flip() +
+  xlim(names_items)+
+  ylab("Degree of the participants’ knowledge about the topic studied (Mean)")
+```
+
+```{r echo=FALSE, fig.align='center', fig.height=17.50, fig.width=13.5, dpi=300}
+plot_comparison
+```
+
+If you want to export the plot, you can use this code:
+```{r eval=FALSE}
+ggsave("Figure_2.emf", plot = plot_comparison,
+       width = 13.50, height = 17.50)
+```
+
+### Figure 3
+
+This third plot allows us to compare the variations in scores before and after the application of the statistical concepts teaching program.
+
+```{r}
+items <- c(1, 2, 4, 5, 6, 8, 9, 11, 14, 17, 18, 22)
+pretest <- c(4.22, 4.11, 1.78, 3.43, 2.67, 3.00,  # pretest means
+             3.00, 2.62, 3.33, 2.57, 2.25, 2.88)
+posttest <- c(4.56, 4.89, 2.44, 2.86, 3.11, 3.43,  # posttest means
+              2.71, 3.12, 3.67, 3.29, 1.88, 4.00)
+
+effect <- tibble(items, pretest, posttest)
+effect <- effect %>% 
+  pivot_longer(
+    cols = c(pretest, posttest),
+    names_to = "pre_post",
+    values_to = "mean"
+  ) %>%
+  mutate(pre_post = as_factor(pre_post),
+         items = as_factor(items))
+
+plot_effect <- ggplot(effect, aes(items, mean, group = pre_post, col = pre_post)) +
+  geom_point(size = 2) +
+  geom_line(size = 1.2, aes(linetype = pre_post)) +
+  geom_label(aes(items, mean, 
+                 label = sprintf("%0.2f", round(mean, digits = 2))),
+             show.legend = F,
+             size = 5,
+             family = "Times New Roman") +
+  geom_hline(yintercept = 1, size = 1, colour = "#333333") +
+  labs(x = "Items of the Psychometrics Group Instrument",
+       y = "Average score") +
+  theme(legend.position = "top",
+        legend.title = element_blank(),
+        legend.text = element_text(size = 19,
+                                   color = "black",
+                                   family = "Times New Roman"),
+        axis.text.x = element_text(size = 19,
+                                   colour = "black",
+                                   family = "Times New Roman"),
+        axis.text.y = element_text(size = 19,
+                                   colour = "black",
+                                   family = "Times New Roman"),
+        plot.margin = margin(1, 1, 1, 1, "cm"),
+        axis.title.x = element_text(size = 19,
+                                    colour = "black",
+                                    family = "Times New Roman",
+                                    margin = margin(t = 20)),
+        axis.title.y = element_text(size = 19,
+                                    colour = "black",
+                                    family = "Times New Roman",
+                                    margin = margin(r = 20)),
+        panel.grid.minor = element_blank(),
+        panel.grid.major.y = element_line(color="#cbcbcb"),
+        panel.grid.major.x = element_blank(),
+        panel.background = element_blank(),
+        axis.ticks = element_blank(),
+        axis.line = element_blank()) +
+  scale_color_manual(breaks = c("pretest", "posttest"),
+                     values = c("grey15", "grey50")) +
+  scale_linetype_manual(values = c("solid", "dashed"))
+```
+
+```{r echo=FALSE, fig.align='center', fig.width=9.5, fig.height=6.90, dpi=300}
+plot_effect
+```
+
+If you want to export the plot, you can use this code:
+```{r eval=FALSE}
+ggsave("Figure_3.emf", plot = plot_effect,
+       width = 9.50, height = 6.90)
+```

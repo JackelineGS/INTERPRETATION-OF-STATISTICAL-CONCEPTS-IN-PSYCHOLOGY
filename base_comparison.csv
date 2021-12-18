@@ -1,0 +1,30 @@
+Item,Mittag & Tompson (2000),Gordon (2001),Monterde-i-Bort et al. (2010),Present study,Topic
+01. NHST controversy,4.38,4.47,3.53,4.31,I. General perceptions
+02. Significance,4.51,4.25,4.36,4.31,I. General perceptions
+03. Statistical power,3.56,3.41,2.88,3.27,I. General perceptions
+04. p-value ban,1.7,1.7,1.59,1.62,I. General perceptions
+05. Statistical significance,2.99,3.02,3.71,3.71,I. General perceptions
+06. p-value < .05 (*),2.8,2.8,3.89,2.31,VIII. p-value (importance)
+07. Test reliability,2.8,2.85,3.49,2.94,IV. Score reliability
+08. Small p-value (*),3,3.05,3.53,2.87,IX. p-value (replicability)
+09. Type II error,2.1,2.27,2.26,3.08,V. Type I and II errors
+10. Small sample size,2.2,2.37,2.9,2.56,VI. Sample size influences
+11. Effect size (*),3.8,3.27,3.54,2.67,VII. p-value (effect size)
+12. Correlation,2.83,2.37,2,2.88,II. General Linear Model (GLM)
+13. Correct use (*),2.58,3.55,2.47,2.77,III. Stepwise analysis
+14. No reject Ho (*),4,3.82,3.9,3.19,VII. p-value (effect size)
+15. Sample data,3,2.82,2.34,3.19,IX. p-value (replicability)
+16. Reject Ho,3,3.15,2.55,2.38,VI. Sample size influences
+17. Type I error (*),3,2.72,3.91,2.75,V. Type I and II errors
+18. No significance (*),1.4,1.45,1.99,2.27,VIII. p-value (importance)
+19. NHST and reliability,2.85,2.8,2.98,2.83,IV. Score reliability
+20. Order of variables (*),2.99,3.47,2.72,2.64,III. Stepwise analysis
+21. Population data (*),2.8,2.22,2.65,2.12,IX. p-value (replicability)
+22. Type I and II errors (*),2.8,3.37,3.53,2.79,V. Type I and II errors
+23. Low reliability,2.6,3.62,3.42,3.81,IV. Score reliability
+24. Sample size dependent,3.25,3.15,3.35,3.88,VII. p-value (effect size)
+25. Large sample size,3.25,2.87,2.61,3.75,VI. Sample size influences
+26. Regression (*),3.83,3.7,3.29,3.3,II. General Linear Model (GLM)
+27. Improbable results (*),3.4,3.5,3.89,3.38,VIII. p-value (importance)
+28. Importance (*),2.63,3.45,3.16,3.75,IV. Score reliability
+29. Frequency (*),3.6,2.52,3.06,2.5,V. Type I and II errors
