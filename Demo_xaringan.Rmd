@@ -1,6 +1,6 @@
 ---
 title: "Interpretación de conceptos estadísticos en Psicología"
-author: "Arnold Tafur, Brian Peña, Connie Aliaga, Francisca Ramirez, Jackeline García y Oscar"
+author: "Arnold Tafur, Brian Peña, Connie Aliaga, Francesca Ramirez, Jackeline García y Oscar Meza"
 institute: "Avances en Medición Psicológica"
 date: "18/12/2021"
 output: 
@@ -255,7 +255,6 @@ Luego de la aplicación, 14 ítems, cuyas afirmaciones son falsas, fueron recodi
 
 ### Segundo Objetivo
 
-.font105[.line-space1-5[
 * Se eligieron 12 ítems cuyos contenidos fueron trabajados en el programa de enseñanza. 
 * Para la comparación entre el pretest y postest, se trabajó con estadística no paramétrica, se utilizó la prueba de rangos con signos de Wilcoxon (W). 
 * Respecto al tamaño del efecto, se empleó el coeficiente de correlación rango biserial para muestras pareadas, considerándose efectos pequeño, mediano y grande los que corresponden a .10, .30 y .50, respectivamente (Cohen, 1988).
@@ -264,21 +263,6 @@ Luego de la aplicación, 14 ítems, cuyas afirmaciones son falsas, fueron recodi
 
 class: inverse, center, middle
 # .font100[RESULTADOS]
-
----
-
-#### [OSF](https://osf.io/pxbcs/)
-#### [MANUSCRITO](https://osf.io/pxbcs/)
-.font105[.line-space1-5[
-
-
-```{r, out.width = "100%", echo = FALSE}
-knitr::include_graphics("imagenes/Seguno resultado.png", dpi = 500)
-```
-
-]
-]
-
 
 ---
 
