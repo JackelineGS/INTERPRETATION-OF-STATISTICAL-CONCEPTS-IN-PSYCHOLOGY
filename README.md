@@ -1,2 +1,2 @@
-# INTERPRETATION-OF-STATISTICAL-CONCEPTS-IN-PSYCHOLOGY
+# Interpretation-of-statistical-concepts-in-psychology
 
