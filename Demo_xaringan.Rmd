@@ -131,9 +131,17 @@ class: inverse, center, middle
 ## Principios del diseño instruccional de Merrill ([Merril, 2002](https://link.springer.com/article/10.1007%2FBF02505024))
 
 .font105[.line-space1-5[
-```{r, out.width = "100%", echo = FALSE}
-knitr::include_graphics("imagenes/Merrill_1.png", dpi = 500)
-```
+
+1. Principio de implicación. El estudiante se involucra en la resolución de problemas del mundo real, comprometiéndose con su aprendizaje.
+
+2. Principio de activación. El estudiante experiencias previas, las organiza y relaciona para la construcción del nuevo conocimiento.
+
+3. Principio de demostración. Al estudiante se le ejemplifican los conceptos, se le muestra los procedimientos y se enseña cómo hacerlos por medio de modelos de comportamiento.
+
+4. Principio de aplicación. El estudiante resuelve problemas aplicando el conocimiento aprendido, se le guía durante la resolución detectando sus errores y brindando retroalimentación.
+
+5. Principio de integración. El estudiante utiliza el nuevo conocimiento en su vida diaria para posteriormente ser capaz de personalizarlo, creando nuevas formas para usarlo. 
+
 ]
 ]
 
